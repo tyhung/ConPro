@@ -1,0 +1,28 @@
+
+try {
+	Connection con = null;
+	PreparedStatement st = null;
+	ResultSet rs = null;
+
+	Class.forName("com.mysql.jdbc.Driver");
+	con = DriverManager.getConnection("jdbc:mysql://10.144.7.2:3306/gfvd_roadmap_10110", "admin","admin123");
+	String sql = "SELECT A FROM gfvd_roadmap_10110.ALLCROAD";
+	st = con.prepareStatement(sql);
+	rs = st.executeQuery();
+
+	while(rs.next()) {
+		rs.getInt("A");
+	}
+
+} catch (Exception e) {
+	e.printStackTrace();
+} 
+
+
+
+gfvd_roadmap_10110.ALLCROAD：路段資訊:道路名(FULLNAME)、ID(ID)、速限(KPH)、長度(LENGTH)、道路種類(TYPE)、
+
+gfvd_roadmap_10110.ALLROUTE_GRAPHEDGE：路段連接資訊：ID(ROADID)、方向(DIR)、起始node(INT_FROM)、結尾node(INT_TO)
+
+
+SELECT * FROM ALLCROAD AS A JOIN ALLROUTE_GRAPHEDGE AS B ON (A.ID = B.ROADID) WHERE A.ID = 'asdf' AND B.DIR = '1';

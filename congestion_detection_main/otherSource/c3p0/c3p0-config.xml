@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+  
+  <named-config name="gfvd">
+    <property name="driverClass">com.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://10.144.7.2:3306/gfvd?rewriteBatchedStatements=true</property>    
+    <property name="user"></property>
+    <property name="password"></property>
+    
+    <property name="acquireIncrement">5</property>
+    <property name="initialPoolSize">5</property>
+    <property name="minPoolSize">5</property>
+    <property name="maxPoolSize">5</property>
+    
+    <property name="maxStatements">0</property> 
+    <property name="maxStatementsPerConnection">5</property>
+    
+   	<!-- 2011.01. No operations allowed after statement closed -->	
+	<property name="automaticTestTable">C3P0TestTable</property>
+	<property name="testConnectionOnCheckin">true</property>
+	<property name="idleConnectionTestPeriod">120</property>
+	<property name="maxIdleTime">150</property>
+	<!--property name="testConnectionOnCheckout">true</property -->  
+  </named-config>
+  
+</c3p0-config>
