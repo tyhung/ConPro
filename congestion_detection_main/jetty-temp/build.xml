@@ -1,0 +1,13 @@
+<project name="Jetty-Ant integration test" basedir=".">
+ 
+  <path id="jetty.plugin.classpath">
+    <fileset dir="jetty-lib" includes="*.jar"/>
+  </path>
+ 
+  <taskdef classpathref="jetty.plugin.classpath" resource="tasks.properties" loaderref="jetty.loader" />
+ 
+  <target name="jetty.run">
+    <jetty.run />
+  </target>
+ 
+</project>
